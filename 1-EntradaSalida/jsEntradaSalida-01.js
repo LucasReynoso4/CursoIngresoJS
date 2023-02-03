@@ -6,3 +6,9 @@ function mostrar()
 	alert("Hola Mundo");
 }
 
+/*
+Entradas: La materias primas
+Procesos: los pasos
+salidas: el resultado 
+
+*/
