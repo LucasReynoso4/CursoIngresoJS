@@ -1,51 +1,98 @@
-/*Reynoso Lucas DIV Z Grupo 1
-Ejercicio Integrador 4
+/******************************************************************************
+ * Apellido:Reynoso
+ * Nombre:Lucas
+ * Comisión: Z
+ * Tutor: thiago
+ 
+Ejercicio 2
 
-/*Tenemos que crear un programa que verifique si el usuario puede subirse a una montaña rusa, para esto el usuario deberá ingresar los siguientes datos por prompt: Altura y edad. 
-Si el usuario mide menos de 120 cm debemos indicar que no puede subirse a la montaña rusa, en cambio sí tiene la altura correspondiente debemos preguntar su edad y mostrarle al usuario por alert el monto a pagar.
-El monto a pagar:
-200$: para menores de edad y mayores de 80
-400$: Mayores de edad menores a 80
+Dr. Gregory Cat (Diagnostico Veterinario)
+Para el hospital de mascotas: Princeton-Plainsboro de Nueva Jersey.
 
-A tener en cuenta: Si preguntamos la altura del usuario y no puede subir no deberíamos preguntarle la edad.
-*/
+Es necesario registrar el ingreso de las mascotas al hospital, para esto hay que considerar
+los siguientes datos y encasillarlos en ciertos diagnósticos para poder derivarlos adecuadamente:
 
-function mostrar()
-{
-	let alturaIngresada;
-	let edadIngresada;
-	let precioMenores;
-	let precioMayores;
+Nombre de la mascota
+Edad (Validar 1 - 20)
+Tipo: (Validar “gato”, “perro”, “hamster”)
+Peso: (Más de 0)
+Diagnostico: (Validar “problemas digestivos”, “otitis”, “alergias en la piel”, “parasitos”, 
+“picazon de abeja”)
+Vacuna antirrábica (validar “si”, ”no”)
+
+Informes:
+
+a) Nombre de la mascota más vieja con la vacuna antirrábica
+b) Cantidad de mascotas sin vacuna antirrábica y con parásitos
+c) El tipo de mascota con más ingresos por problemas digestivos.
+d) Nombre, edad y diagnóstico de la mascota más joven ingresada.
+e) Cantidad de perros ingresados por otitis.
+
+
+
+*******************************************************************************/
+
+
+
+function mostrar(){
+
+
+	let edadIngresada
+	let nombreIngresado;
+	let tipoMascota;
+	let pesoMascota;
+	let diagnosticoMascota;
+	let vacunaAntirrabica;
+	let respuesta;
 
 	
-	edadIngresada = parseInt(edadIngresada);
 
-	precioMenores = 200;
-	precioMayores = 400;
-	alturaIngresada = prompt("Indique su estatura ");
-	
+	pesoMascota = parseInt(pesoMascota)
 
-	if(alturaIngresada <= 119 ){
+	do{
+		nombreIngresado = prompt("Ingrese el nombre de su mascota");
+		do{
+			edadIngresada = prompt("Ingrese la edad de su mascota");
+			edadIngresada = parseInt(edadIngresada);
 
-		alert("No puede ingresar a la montaña rusa");
+		}while(iSNaN(edadIngresada) || edadIngresada <0 || edadIngresada > 20);
+		do{
+			tipoMascota = prompt("Ingrese el tipo de mascota que tiene: \n A.perro \n B.gato \n C.hamster ");
 
-	}
-	else{
+		}while(tipoMascota != "perro" && tipoMascota != "gato" && tipoMascota != "hamster" );
+		do{
+			pesoMascota = prompt("Ingrese el peso de su mascota ");
+			pesoMascota = parseFloat(pesoMascota);
 
-		edadIngresada = prompt("Indique su edad ");
+		}while(iSNaN(pesoMascota) || pesoMascota < 0);
+		do{
+			diagnosticoMascota = prompt("Ingrese el diagonostico de su mascota: ");
 
-		if(edadIngresada <= 17 || edadIngresada >= 81 ){
+			//Validar “problemas digestivos”, “otitis”, “alergias en la piel”, “parasitos”, “picazon de abeja”)
+		}while(diagnosticoMascota !="problemas digestivos" && diagnosticoMascota != "otitis" && diagnosticoMascota != "alergias en la piel" && diagnosticoMascota != "parasitos" && diagnosticoMascota != "picazon de abeja" );
+		do{
+			vacunaAntirrabica = prompt("Su mascota tiene la vacuna antirrabica? ");
+		}while(vacunaAntirrabica != "si" && vacunaAntirrabica != "no");
 
-			alert("Su monto a abonar es de " + precioMenores);
 
-		}
-	else{
+		
 		
 
-			alert("Su monto a abonar es de " + precioMayores);
 
-	}
 
-	}
+
+
+	}while(respuesta == true);
+
+
+
+	
+
+	
+
+
+
+
+
 
 }
